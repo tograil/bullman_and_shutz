@@ -146,9 +146,9 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
 
                 started = false;
 
-                control.stop();
+                //control.stop();
                 disc.stop();
-                sound.restart();
+                sound.stop();
 
                 timer = undefined;
             }
