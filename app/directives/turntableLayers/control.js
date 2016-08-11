@@ -283,12 +283,12 @@ control.addEventListener ('mousedown', function (){
 
     function setPosition(percentage)
     {
-        var coef = percentage/100;
-
-        var angle = 22 + (50-22)*coef;
-
         if(!moveToStartFlag)
         {
+            var coef = percentage/100;
+
+            var angle = 22 + (50-22)*coef;
+
             currentAngle = angle;
             anim.start();
         }
