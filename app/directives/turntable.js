@@ -93,16 +93,16 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
             var started = false;
 
             function powerOn() {
-                power(true);
+                //power(true);
             }
 
 
             function powerOff() {
-                power(false);
+                //power(false);
             }
 
             function power(param) {
-                powered = param;
+                /*powered = param;
 
                 if(powered && started)
                 {
@@ -110,8 +110,8 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
                 }
                 else
                 {
-                    stop()
-                }
+                    stop();
+                }*/
             }
 
             var timer;
@@ -128,11 +128,15 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
                     sound.play();
 
                     timer = $interval(function () {
-                        var progress = sound.currentTime;
-                        var position = progress + sound.remaining;
-                        var angle = progress * 100 / position;
-                        soundWave.updatePosition(progress, position);
-                        control.setPosition(angle);
+                        if(started && sound.currentTime)
+                        {
+                            var progress = sound.currentTime;
+                            var position = progress + sound.remaining;
+                            var angle = progress * 100 / position;
+                            soundWave.updatePosition(progress, position);
+                            control.setPosition(angle);
+                        }
+
                     }, 1000);
 
                 }
@@ -140,8 +144,7 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
 
             function stop() {
 
-                if(powered)
-                    started = false;
+                started = false;
 
                 control.stop();
                 disc.stop();
