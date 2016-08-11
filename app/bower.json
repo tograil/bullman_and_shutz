@@ -1,0 +1,13 @@
+{
+  "name": "scripts",
+  "homepage": "steadyworks.pro",
+  "authors": [
+    "steadyworks.pro"
+  ],
+  "description": "",
+  "main": "",
+  "license": "steadyworks.pro",
+  "dependencies": {
+    "angular-audio": "^1.7.2"
+  }
+}
