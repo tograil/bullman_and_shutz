@@ -13,12 +13,12 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
 
 
         loadedImages.loadImages().then(function (images) {
-            var control = addWaveControl(stage, images);
-            addTurntable(stage, images, control);
+
+            addTurntable(stage, images);
 
         });
 
-        function addTurntable(stage, images, soundWave) {
+        function addTurntable(stage, images) {
 
             var turntableLayer = new Konva.Layer();
 
@@ -116,28 +116,35 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
 
             var timer;
 
+            var timerFunc = function () {
+                if(started && sound.currentTime)
+                {
+                    var progress = sound.currentTime;
+                    var position = progress + sound.remaining;
+                    var angle = progress * 100 / position;
+                    control.setPosition(angle);
+
+                }
+
+            };
+
+            function startPlay() {
+                sound = ngAudio.load(mp3Url);
+                sound.play();
+                disc.start();
+                control.moveToStart();
+                timer = $interval(timerFunc, 1000);
+            }
+            
+            
             function start() {
                 started = true;
 
                 if(powered) {
-                    control.moveToStart();
-                    disc.start();
-
-                    sound = ngAudio.load(mp3Url);
 
                     sound.play();
-
-                    timer = $interval(function () {
-                        if(started && sound.currentTime)
-                        {
-                            var progress = sound.currentTime;
-                            var position = progress + sound.remaining;
-                            var angle = progress * 100 / position;
-                            soundWave.updatePosition(progress, position);
-                            control.setPosition(angle);
-                        }
-
-                    }, 1000);
+                    disc.start();
+                    timer = $interval(timerFunc, 1000);
 
                 }
             }
@@ -146,9 +153,8 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
 
                 started = false;
 
-                //control.stop();
                 disc.stop();
-                sound.stop();
+                sound.pause();
 
                 timer = undefined;
             }
@@ -186,7 +192,7 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
             stage.add(turntableLayer);
 
             powerOn();
-            start();
+            startPlay();
         }
 
 
