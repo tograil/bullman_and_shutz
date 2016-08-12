@@ -58,7 +58,7 @@ function addSpeedSlider(stage, baseGroup, layer, params, disc) {
             speedPercentage = perc;
 
             if(params.updateSpeed)
-                params.updateSpeed((-perc)/100);
+                params.updateSpeed((perc)/100);
 
             return {
                 y: ypos,
