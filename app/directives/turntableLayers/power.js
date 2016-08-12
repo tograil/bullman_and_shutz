@@ -30,14 +30,14 @@ function addPowerLayer(stage, layer, params) {
 
     on.hide();
 
-    off.on('mousedown', function () {
+    off.on('mousedown touchstart', function () {
         params.power(false);
         off.hide();
         on.show();
         layer.draw();
     });
 
-    on.on('mousedown', function () {
+    on.on('mousedown touchstart', function () {
         //params.stop();
         params.power(true);
         off.show();

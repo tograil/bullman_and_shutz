@@ -103,7 +103,7 @@ function addOnOffLayer(stage, layer, params) {
         }
     }
 
-    off.on('mousedown', function () {
+    off.on('mousedown touchstart', function () {
 
 
 
@@ -113,7 +113,7 @@ function addOnOffLayer(stage, layer, params) {
 
     });
 
-    on.on('mousedown', function () {
+    on.on('mousedown touchstart', function () {
 
         off.show();
         on.hide();
@@ -141,7 +141,7 @@ function addOnOffLayer(stage, layer, params) {
         layer.draw();
     }
 
-    red_btn_off.on('mousedown', function(){
+    red_btn_off.on('mousedown touchstart', function(){
 
 
         power();
@@ -149,7 +149,7 @@ function addOnOffLayer(stage, layer, params) {
         
     });
 
-   red_btn_on.on('mousedown', function(){
+   red_btn_on.on('mousedown touchstart', function(){
        if(started)
             params.stop();
        red_btn_on.hide();

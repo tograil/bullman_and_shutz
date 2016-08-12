@@ -54,7 +54,7 @@ on33.show();
 off45.show();
     on45.hide();
 
-off45.on('mousedown', function () {
+off45.on('mousedown touchstart', function () {
 
     //params.start();
     off45.hide();
@@ -68,7 +68,7 @@ off45.on('mousedown', function () {
 
 });
 
-off33.on('mousedown', function () {
+off33.on('mousedown touchstart', function () {
     //params.stop();
     on45.hide();
     off33.hide();

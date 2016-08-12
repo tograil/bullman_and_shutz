@@ -74,7 +74,7 @@ function addSpeedSlider(stage, baseGroup, layer, params, disc) {
 
 
 
-speedSliderButton.on('mousemove', function(){
+speedSliderButton.on('mousemove touchmove', function(){
 
     var ypos = 0;
     if (ypos == 200) {

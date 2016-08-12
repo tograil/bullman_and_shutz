@@ -235,12 +235,12 @@ control.addEventListener ('mousedown', function (){
     var mousePressed = false;
 
 
-    controlImageLowLeft.on('mousedown.konva', function(){
+    controlImageLowLeft.on('mousedown.konva touchstart.konva', function(){
         mousePressed = true;
         anim.start();
   });
 
-    stage.on('mouseup.konva', function(){
+    stage.on('mouseup.konva touchend.konva', function(){
 
         mousePressed =  false;
         anim.stop();
@@ -272,7 +272,7 @@ control.addEventListener ('mousedown', function (){
         }
     }
 
-    stage.on('mousemove.konva', function(){
+    stage.on('mousemove.konva touchmove.konva' , function(){
         if(mousePressed)
        {
            getPositionCoord();
