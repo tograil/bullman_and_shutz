@@ -83,8 +83,9 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
                 },
                 stop: function () {
                     disc.stop();
-                }
-
+                },
+                needleOnPosition: needleOnPosition,
+                needleOutOfPosition: needleOutOfPosition
 
             });
 
@@ -117,19 +118,18 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
             var timer;
 
             var timerFunc = function () {
-                if(started && sound.currentTime)
+                if(sound.progress)
                 {
-                    var progress = sound.currentTime;
-                    var position = progress + sound.remaining;
-                    var angle = progress * 100 / position;
-                    control.setPosition(angle);
-
+                    control.setPosition(sound.progress * 100);
                 }
 
             };
 
             function startPlay() {
                 sound = ngAudio.load(mp3Url);
+
+
+                sound.progress = 0.5;
                 sound.play();
                 disc.start();
                 control.moveToStart();
@@ -159,9 +159,27 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
                 timer = undefined;
             }
 
+            var pausedNeedle = false;
+
+            function needleOnPosition(needlePos) {
 
 
+                //sound.progress = needlePos;
 
+                /*if(pausedNeedle && started)
+                {
+                    sound.play();
+                }*/
+
+
+            }
+            
+            function needleOutOfPosition() {
+                sound.pause();
+                pausedNeedle = false;
+            }
+            
+            
             var percentageC = 0;
             var fixedSpeedC = 45;
 

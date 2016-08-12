@@ -187,7 +187,8 @@ control.addEventListener ('mousedown', function (){
     }
 
     var currentAngle = 0;
-    var topAngle = 50;
+    var botAngle = 21;
+    var topAngle = 45;
 
 
     function checkAngle(angle) {
@@ -196,6 +197,22 @@ control.addEventListener ('mousedown', function (){
 
         if(angle > topAngle || angle < 0)
            return false;
+
+        return true;
+    }
+
+    function checkAngleOutOfPlate(angle) {
+        if(isNaN(angle))
+            return true;
+
+        if(angle < topAngle && angle > botAngle)
+        {
+            params.needleOnPosition((angle - botAngle) / (topAngle - botAngle));
+            return false;
+        }
+
+
+        params.needleOutOfPosition();
 
         return true;
     }
@@ -227,6 +244,12 @@ control.addEventListener ('mousedown', function (){
 
         mousePressed =  false;
         anim.stop();
+
+        if(checkAngleOutOfPlate(currentAngle))
+        {
+            moveToStop();
+        }
+
     });
 
     function getPositionCoord() {
@@ -283,7 +306,7 @@ control.addEventListener ('mousedown', function (){
 
     function setPosition(percentage)
     {
-        if(!moveToStartFlag)
+        /*if(!moveToStartFlag)
         {
             var coef = percentage/100;
 
@@ -291,7 +314,7 @@ control.addEventListener ('mousedown', function (){
 
             currentAngle = angle;
             anim.start();
-        }
+        }*/
     }
 
     function getPosition() {
