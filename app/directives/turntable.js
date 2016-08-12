@@ -128,8 +128,6 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
             function startPlay() {
                 sound = ngAudio.load(mp3Url);
 
-
-                sound.progress = 0.5;
                 sound.play();
                 disc.start();
                 control.moveToStart();
