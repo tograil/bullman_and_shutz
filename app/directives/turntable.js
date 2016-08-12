@@ -131,6 +131,12 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
                 sound.unlock = true;
 
                 sound.play();
+
+                if(sound.error)
+                {
+                    alert('error');
+                }
+
                 disc.start();
                 control.moveToStart();
                 timer = $interval(timerFunc, 1000);
