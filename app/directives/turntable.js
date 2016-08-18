@@ -142,7 +142,7 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', '$timeout',
             function startSound() {
                 if(!sound.canPlay)
                 {
-                    $timeout(startSound, 500);
+                    $timeout(startSound, 3000);
                     return;
                 }
 
