@@ -126,6 +126,12 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', '$timeout',
             };
 
             function startPlay() {
+                if(!sound.canPlay)
+                {
+                    $timeout(startPlay, 3000);
+                    return;
+                }
+
                 sound.play();
 
                 if(sound.error)
@@ -213,7 +219,7 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', '$timeout',
 
             powerOn();
             sound = ngAudio.load(mp3Url);
-            $timeout(startPlay, 3000);
+            $timeout(startPlay, 500);
 
         }
 
