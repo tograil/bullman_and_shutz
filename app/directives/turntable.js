@@ -6,7 +6,7 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
             height: 520
         });
 
-        var mp3Url = 'audio/BackinBlack.mp3';
+        var mp3Url = 'http://timbullman.blob.core.windows.net/playing/ZgI60S3LSGSB.128.mp3';
 
         var sound = ngAudio.load(mp3Url);
 
