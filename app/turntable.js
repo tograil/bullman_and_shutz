@@ -36,6 +36,13 @@ app.value('images', {
     soundWaveControlBtn: 'sound-wave-control-btn.png'*/
 });
 
+app.value('ngAudioGlobals', {
+    muting: false,
+    songmuting: false,
+    performance: 25,
+    unlock: true
+});
+
 app.factory('loadedImages', ['$q', 'imagePath', 'images', function ($q, imagePath, images) {
     var loadedImages = [];
 
