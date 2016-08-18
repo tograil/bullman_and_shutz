@@ -1,4 +1,4 @@
-app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(loadedImages, ngAudio, $interval){
+app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', '$timeout', function(loadedImages, ngAudio, $interval, $timeout){
     function link(scope, element, attrs) {
         var stage = new Konva.Stage({
             container: element[0],   // id of container <div>
@@ -126,15 +126,6 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
             };
 
             function startPlay() {
-                sound = ngAudio.load(mp3Url);
-
-                if(!sound.canPlay)
-                {
-                    alert("Can't play");
-                }
-
-
-
                 sound.play();
 
                 if(sound.error)
@@ -221,7 +212,9 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
             stage.add(turntableLayer);
 
             powerOn();
-            startPlay();
+            sound = ngAudio.load(mp3Url);
+            $timeout(startPlay, 3000);
+
         }
 
 
