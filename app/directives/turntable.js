@@ -126,14 +126,7 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', '$timeout',
             };
 
             function startPlay() {
-                if(!sound.canPlay)
-                {
-                    $timeout(startPlay, 3000);
-                    alert('next try');
-                    return;
-                }
 
-                sound.play();
 
                 if(sound.error)
                 {
@@ -142,6 +135,18 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', '$timeout',
 
                 disc.start();
                 control.moveToStart();
+                startSound();
+
+            }
+            
+            function startSound() {
+                if(!sound.canPlay)
+                {
+                    $timeout(startSound, 500);
+                    return;
+                }
+
+                sound.play();
                 timer = $interval(timerFunc, 1000);
             }
             
@@ -220,7 +225,7 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', '$timeout',
 
             powerOn();
             sound = ngAudio.load(mp3Url);
-            $timeout(startPlay, 500);
+            startPlay();
 
         }
 
