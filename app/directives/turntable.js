@@ -128,7 +128,12 @@ app.directive("turntable", [ 'loadedImages', 'ngAudio', '$interval', function(lo
             function startPlay() {
                 sound = ngAudio.load(mp3Url);
 
-                sound.unlock = true;
+                if(!sound.canPlay)
+                {
+                    alert("Can't play");
+                }
+
+
 
                 sound.play();
 
