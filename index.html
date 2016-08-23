@@ -47,9 +47,6 @@
 				</div>
 				<div class="item">
 					<img class="third-slide" src="img/1460110424.jpg" alt="Third slide">
-					<!-- <div class="container">
-						<div class="carousel-caption"></div>
-					</div>-->
 				</div>
 			</div>
 
@@ -62,13 +59,7 @@
 				<span class="fa fa-chevron-right" aria-hidden="true"></span>
 				<span class="sr-only">Next</span>
 			</a>
-		</div><!-- /.carousel -->
-
-		<!-- <section class="page-section">
-			<div class="container">
-				<turntable></turntable>
-			</div>
-		</section> -->
+		</div>
 
 		<section class="page-section" id="media">
 			<div class="container">
@@ -163,8 +154,85 @@
 					<h1>Contact Us</h1>
 				</div>
 				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<h4>Follow Us</h4>
+
+						<div class="row social">
+							<div class="col-xs-6 col-sm-6 col-md-3">
+								<a href="//myspace.com/bullmann-schuth" class="thumbnail">
+									<img alt="MySpace" src="data:image/png;base64,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">
+									<div class="caption">
+										<h5>MySpace</h5>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-xs-6 col-sm-6 col-md-3">
+								<a href="//soundcloud.com/bullmann-schuth" class="thumbnail">
+									<i class="fa fa-3x fa-soundcloud" aria-hidden="true"></i>
+									<div class="caption">
+										<h5>Soundcloud</h5>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-xs-6 col-sm-6 col-md-3">
+								<a href="//www.mixcloud.com/bullmann_schuth" class="thumbnail">
+									<i class="fa fa-3x fa-mixcloud" aria-hidden="true"></i>
+									<div class="caption">
+										<h5>Mixcloud</h5>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-xs-6 col-sm-6 col-md-3">
+								<a href="//www.instagram.com/bullmann_schuth" class="thumbnail">
+									<i class="fa fa-3x fa-instagram" aria-hidden="true"></i>
+									<div class="caption">
+										<h5>Instagram</h5>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-xs-6 col-sm-6 col-md-3">
+								<a href="//www.youtube.com/user/BullmannSchuth" class="thumbnail">
+									<i class="fa fa-3x fa-youtube-play" aria-hidden="true"></i>
+									<div class="caption">
+										<h5>Youtube</h5>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-xs-6 col-sm-6 col-md-3">
+								<a href="//www.twitter.com/bullmann_schuth" class="thumbnail">
+									<i class="fa fa-3x fa-twitter" aria-hidden="true"></i>
+									<div class="caption">
+										<h5>Twitter</h5>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-xs-6 col-sm-6 col-md-3">
+								<a href="//plus.google.com/+BullmannSchuth?hl=de" class="thumbnail">
+									<i class="fa fa-3x fa-google-plus" aria-hidden="true"></i>
+									<div class="caption">
+										<h5>Google+</h5>
+									</div>
+								</a>
+							</div>
+
+							<div class="col-xs-6 col-sm-6 col-md-3">
+								<a href="//de-de.facebook.com/Zeitverschiebung/" class="thumbnail">
+									<i class="fa fa-3x fa-facebook" aria-hidden="true"></i>
+									<div class="caption">
+										<h5>Facebook</h5>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
 					
-					<div class="col-md-6">
+					<div class="col-xs-12 col-sm-6 col-md-6">
 						<h4>Adress:</h4>
 						<address>
 							<strong>Bullmann &amp; Schuth - Production</strong><br>
@@ -175,85 +243,6 @@
 						<h4>Contact:</h4>
 						Tel.: <a href="tel:+490607433795">+49 (0) 6074 33795</a><br>
 						E-Mail: <a href="mailto:bullmann-schuth@mail.de">bullmann-schuth@mail.de</a>
-					</div>
-
-					<div class="col-md-6">
-						<h4>Follow Us</h4>
-
-						<div class="row social">
-							<div class="col-sm-6 col-md-3">
-								<a href="//myspace.com/bullmann-schuth" class="thumbnail">
-									<img alt="MySpace" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAF70lEQVRYR+2YbWxTVRjHz7m3vXW2tNzuJeN1cSMsmbIPEBmJxBijzg+TynCMsfKixDjDi4R1xGROuzESI0EiHwghkoz5xYADDGBiJBJxIWqEzI0W+0IKTbvBZm53XS3r2z3mqTvL4dJB26WGDzS56Xbvuef5nf9znud/Nowe8w9+zPnQE8DZZuiJggghXhTFDzHGmxBClQghiRDSryjKblmWfY9SON8KCkVFRT9gjF/kOA5h/F84RVHgKxKNRt+QZfnHh0HOClAUxR2EkE0YYzNC6DdFUT5iVZk/f/7HiqJ08jyP4GIBE4kE3PsLIbQ4EAjcmwkyZ8DCwsIjGOP3QRn4EEIAYCIejz8XCoX8cK+yslKKRCKiRqNJAcJYGAcKAmA8HkcGg6He7XafyRnQaDQuQQiZeZ53hUIhGSYym81VWq3WQYNSQAg8Z86c0263ex3cW7RoEdFqtQgA4aKAyWQyBRiLxdCqVau+PHny5Ls5AZpMpjaO4z6D1HAcN6IoyiuSJDlra2s7HA5HFw0KzwEOApvN5omBgQEjBFy+fDmZmJhAAMkuBsaBegDY3Nz8dXd3d1PWgKIoLtZoND6McSqHAGEymS653e6XDx48eOjw4cO7aWAKCKpUV1ffO3v27NPwTmtr673z588/lU5BAIT7x48f31NTU3Moa0Cr1brm4sWL37LVV1ZWJl+5cmWuJEl169evP+f3+6c3P6gCV1dXl3Pjxo3PQsA7d+58VV9fbx0fH38gxQDY1tYW3bZtWwXGOJg1YDAYfMFqtfbfvHkzpR5s7l27dg3bbLYFhBDB5XL9abPZnqHPYSHbt29HLS0tDRjjb6b2pdnr9bra29uLnE7n9B7U6XTIZrOhxsbG3RjjL3JqMwARCASGjh49utTn86Ha2lq0efPmvRjjA1PBoemecjgcyyRJQlVVVbHCwsJPMMafsgEJITCu1+fzrbx+/ToqLS2Fsf/o9fo9GONjs2rUFy5cWOr1eo9IklQ+b96871paWnbQCYuLiw1Go/EDvV7fLAiCLhqNDsqy3O33+6+qg1ZUVLxeUlLytiAI1YIgeMbHx8+NjIz0BQIBKWfAhQsXLuB5/jLHceU0xYSQY7du3XoPnmm12ssY43K2D0KRJBKJ1mAw+DkELi0tLeZ5/rQgCKvZPgh7VVGU0Vgstm54eLg/pxSXl5d/n0gkXoNKo4BTrcRSUFDQHo/HVwIcLSLafJPJpKIoyqsY4wGO435FCC1RN2raBxOJhBKPx98aHR3NrlGLomgyGAwhnucx22ChUHQ63djk5GQxQFP7YvsgqCiK4tVIJPLH5OTkO9Tm1ApSJ9FoNFI4HC4bGxsLp1MyrdVZLJaaa9eu/SIIwnR7oG4BkPChytEUg4K0WcM3x3GEEILhOYVTezG0Grh4nj9w+/btvRkD2u32N3t6es6wgDTNdBL4nV6s1QEcLGLKm1MLoYthAambAGBBQcHfN27cMGUDWN/b29tHAdmTCA1M3UXVUlIqUpXZRdCfKTzrx2B54XB4LvV6ds60Kd63b199T09PHzRUusHp6tWrpPcpFAVgF8AqzapNDwwAuGLFiuf7+vp+f2D+dLIC4IkTJ1IKgt/SND2qZ9Hg9ykwdUhVv8seuQCwqalpzf79+89lDAgKsimmxZAutZmApwNkTzVbt25d19HRcTojQLvdnlKQnuXYKmTTNVPaMwGGrTDV2FPHri1btmQOSAhZhhAaTBdo586dqL+/f7qCc4UEQFbBrAAfpoDVar07ODhYwraPTBRTj8kb4IYNG+4ODQ2VqNM+U3XPBJ83wIaGhpSC1ALTFU8m+zRvgE6n81IymXyJ3XvqfdjZ2Yk8Hs99TvO/pZgQAn/lpbUlCtHY2PiTy+XSqy1O7Tp5KZJMCmLt2rWy1+s1qg8Jjw2gxWKRPR5PCpD18XSA1O6yatSZqPSwMXV1dbLb7TamKyT6Hi0Sei6EPmi32zNzktkCEkJ+RgitznKeaozxUEZWl+XEeR2e8z+P8krFTP4EcLZK/wvsT5JWSV8GkgAAAABJRU5ErkJggg==">
-									<div class="caption">
-										<h5>MySpace</h5>
-									</div>
-								</a>
-							</div>
-
-							<div class="col-sm-6 col-md-3">
-								<a href="//soundcloud.com/bullmann-schuth" class="thumbnail">
-									<i class="fa fa-3x fa-soundcloud" aria-hidden="true"></i>
-									<div class="caption">
-										<h5>Soundcloud</h5>
-									</div>
-								</a>
-							</div>
-
-							<div class="col-sm-6 col-md-3">
-								<a href="//www.mixcloud.com/bullmann_schuth" class="thumbnail">
-									<i class="fa fa-3x fa-mixcloud" aria-hidden="true"></i>
-									<div class="caption">
-										<h5>Mixcloud</h5>
-									</div>
-								</a>
-							</div>
-
-							<div class="col-sm-6 col-md-3">
-								<a href="//www.instagram.com/bullmann_schuth" class="thumbnail">
-									<i class="fa fa-3x fa-instagram" aria-hidden="true"></i>
-									<div class="caption">
-										<h5>Instagram</h5>
-									</div>
-								</a>
-							</div>
-
-							<div class="col-sm-6 col-md-3">
-								<a href="//www.youtube.com/user/BullmannSchuth" class="thumbnail">
-									<i class="fa fa-3x fa-youtube-play" aria-hidden="true"></i>
-									<div class="caption">
-										<h5>Youtube</h5>
-									</div>
-								</a>
-							</div>
-
-							<div class="col-sm-6 col-md-3">
-								<a href="//www.twitter.com/bullmann_schuth" class="thumbnail">
-									<i class="fa fa-3x fa-twitter" aria-hidden="true"></i>
-									<div class="caption">
-										<h5>Twitter</h5>
-									</div>
-								</a>
-							</div>
-
-							<div class="col-sm-6 col-md-3">
-								<a href="//plus.google.com/+BullmannSchuth?hl=de" class="thumbnail">
-									<i class="fa fa-3x fa-google-plus" aria-hidden="true"></i>
-									<div class="caption">
-										<h5>Google+</h5>
-									</div>
-								</a>
-							</div>
-
-							<div class="col-sm-6 col-md-3">
-								<a href="//de-de.facebook.com/Zeitverschiebung/" class="thumbnail">
-									<i class="fa fa-3x fa-facebook" aria-hidden="true"></i>
-									<div class="caption">
-										<h5>Facebook</h5>
-									</div>
-								</a>
-							</div>
-
-						</div>
 					</div>
 				</div>
 
@@ -300,12 +289,19 @@
 
 		<footer>
 			<div class="container">
-				<p class="pull-right"><a href="#">Back to top</a></p>
-				<p>Alle Rechte vorbehalten B&amp;S &copy; 2016  Bullmann &amp; Schuth Dj`s/Producers &middot; <a href="#">Impressum</a> &middot; <a href="#">Datenschutz</a></p>
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<div class="text-center">
+							Alle Rechte vorbehalten B&amp;S &copy; 2016  Bullmann &amp; Schuth Dj`s/Producers<br>
+							<a href="#">Impressum</a> &middot; <a href="#">Datenschutz</a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</footer>
+		<a href="#0" class="cd-top">Back to Top</a>
 
-		<script src="app/lib/jquery/dist/jquery.min.js"></script>
+	<script src="app/lib/jquery/dist/jquery.min.js"></script>
     <script src="app/lib/angular/angular.min.js"></script>
     <script src="app/lib/angular-audio/app/angular.audio.js"></script>
     <script src="app/lib/konva/konva.min.js"></script>
@@ -326,6 +322,7 @@
 
 		<script src="dist/js/bootstrap.min.js"></script>
 		<script src="js/classie.js"></script>
+		<script src="js/totop.js"></script>
 		<script>
 			function init() {
 				window.addEventListener('scroll', function(e){
