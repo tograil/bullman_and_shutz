@@ -1,7 +1,7 @@
 /*
  *
- * powered by Yegunov.com
- *
+ * Powered by Yegunov.com
+ * Version: 0.2.0
  *
  */
 
@@ -11,6 +11,16 @@
 
 body {
 	position: relative;
+}
+
+.carousel {
+	padding-top: 10.7em;
+}
+
+@media (min-width: 920px) and (max-width: 1200px) {
+	.carousel {
+		padding-top: 7.12em;	
+	}
 }
 
 .carousel-control .icon-prev,
@@ -38,7 +48,6 @@ body {
 
 header {
 	width: 100%;
-	height: 150px;
 	overflow: hidden;
 	position: fixed;
 	top: 0;
@@ -54,7 +63,6 @@ header {
 
 header .brand {
 	display: inline-block;
-	height: 150px;
 	line-height: 150px;
 	float: left;
 	font-family: "Monoton",fantasy,"google";
@@ -98,6 +106,7 @@ header nav a:hover {
 header.smaller {
     height: 75px;
 }
+
 header.smaller h1.brand {
 	height: 75px;
 	line-height: 75px;
@@ -113,9 +122,9 @@ header.smaller nav a {
 		display: block;
 		float: none;
 		margin: 0 auto;
-		height: 100px;
+		height: 1.667em;
 		line-height: 1;
-		padding: 25px 0 0 0;
+		padding: .7em 0 0 0;
 		font-size: 3rem;
 		text-align: center;
 	}
@@ -152,9 +161,14 @@ header.smaller nav a {
   margin: 80px 0;
 }
 
+.page-section:first-child,
+.featurette-divider:first-child {
+	margin: 0 0 0 0;
+}
+
 footer {
 	background-color: rgba(0,0,0,0.52);
-	line-height: 140px;
+	padding: 2em 0;
 }
 
 .social {
